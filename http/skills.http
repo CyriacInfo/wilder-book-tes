@@ -1,0 +1,23 @@
+###
+GET http://localhost:8000/api/skills/
+###
+GET http://localhost:8000/api/skills/10
+###
+POST http://localhost:8000/api/skills HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "ReactJs"
+}
+###
+PUT http://localhost:8000/api/skills/10 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Patoche"
+}
+###
+DELETE http://localhost:8000/api/skills/2
+
+###
+

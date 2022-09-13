@@ -1,0 +1,26 @@
+###
+GET http://localhost:8000/api/wilders/
+###
+GET http://localhost:8000/api/wilders/1
+###
+POST http://localhost:8000/api/wilders HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Cyriac"
+}
+###
+PUT http://localhost:8000/api/wilders/10 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Update1"
+}
+###
+DELETE http://localhost:8000/api/wilders/2
+
+###
+POST http://localhost:8000/api/wilders/1/7
+
+###
+DELETE http://localhost:8000/api/wilders/1/5

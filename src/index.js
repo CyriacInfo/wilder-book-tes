@@ -1,35 +1,20 @@
-const express = require('express');
-const typeorm = require('typeorm');
-const Wilder = require('./Wilder');
+const express = require("express");
+const { dataSource } = require("./utils");
 
-const dataSource = new typeorm.DataSource({
-  type: 'sqlite',
-  database: './wildersdb.sqlite',
-  synchronize: true,
-  entities: [
-    require('./Wilder'),
-  ]
-});
+const mainRouter = require("./controllers");
 
 const app = express();
 
 app.use(express.json());
 
-app.get('/wilders', (request, response) => {
-});
+app.use("/api", mainRouter);
 
-app.get('/wilders/:id', (request, response) => {
-  response.send("First endpoint");
-});
-
-app.post('/wilders', (request, response) => {
-  response.send("First endpoint");
-});
-
-app.listen(3000, async () => {
+app.listen(8000, async () => {
   await dataSource.initialize();
-  dataSource.getRepository(Wilder).save({
-    name: 'Maël'
-  });
-  console.log('Server launch on http://localhost:3000');
+  console.log("Server launch on http://localhost:8000");
 });
+
+
+// créer un skill
+// supprimer un skill
+// Lister tous les skills
