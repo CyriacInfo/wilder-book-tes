@@ -7,20 +7,35 @@ POST http://localhost:8000/api/wilders HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Cyriac"
+    "name": "test",
+    "description": "tedfzerzerzer"
 }
 ###
-PUT http://localhost:8000/api/wilders/10 HTTP/1.1
+PUT http://localhost:8000/api/wilders/1 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Update1"
+    "name": "Fabrice",
+    "description": "Fabrice est un wilder qui aime le TypeScript",
 }
 ###
-DELETE http://localhost:8000/api/wilders/2
+DELETE http://localhost:8000/api/wilders/4
 
 ###
-POST http://localhost:8000/api/wilders/1/7
+POST http://localhost:8000/api/wilders/4/addskills HTTP/1.1
+Content-Type: application/json
+
+{
+    "skills": [4,5,6]
+}
+
+###
+PUT http://localhost:8000/api/wilders/4/updatewilderskills HTTP/1.1
+Content-Type: application/json
+
+{
+    "updateSkills": [{ "id":1, "name": "HTML"},{"id":2, "name": "CSS"}]
+}
 
 ###
 DELETE http://localhost:8000/api/wilders/1/5
